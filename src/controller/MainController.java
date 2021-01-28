@@ -12,7 +12,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.input.KeyEvent;
 import javafx.stage.Stage;
-import model.model;
+import model.Model;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -52,24 +52,24 @@ public class MainController implements Initializable
     public void absoluteInput (KeyEvent event)
     {
         TextField txt = (TextField) event.getSource();
-        if (event.getCode().getCode() >= 48 && event.getCode().getCode() <= 57) //Hilfe von Brettbacher
+        if (event.getText().length() >= 48 && event.getText().length()  <= 57) //Hilfe von Brettbacher
         {
             if (txt.getId().contains("red"))
             {
-                model.changeColorViaAbsoluteValue(ColorCode.RED, Integer.parseInt(txt.getText()));
+                Model.changeColorViaAbsoluteValue(ColorCode.RED, Integer.parseInt(txt.getText()));
             }
             else if (txt.getId().contains("green"))
             {
-                model.changeColorViaAbsoluteValue(ColorCode.GREEN, Integer.parseInt(txt.getText()));
+                Model.changeColorViaAbsoluteValue(ColorCode.GREEN, Integer.parseInt(txt.getText()));
             }
             else{
-                model.changeColorViaAbsoluteValue(ColorCode.BLUE, Integer.parseInt(txt.getText()));
+                Model.changeColorViaAbsoluteValue(ColorCode.BLUE, Integer.parseInt(txt.getText()));
             }
         }
         else{
             txt.clear();
         }
-        String hexCode = model.getHex();
+        String hexCode = Model.getHex();
         hex.setText(hexCode);
         color.setStyle("-fx-background-color: " + hexCode + ";");
     }
@@ -78,19 +78,19 @@ public class MainController implements Initializable
         Button button = (Button) event.getSource();
         if (button.getId().contains("red"))
         {
-            model.changeColorViaRelativeValue(ColorCode.RED, button.getText());
-            red.setText(" " + model.getRed());
+            Model.changeColorViaRelativeValue(ColorCode.RED, button.getText());
+            red.setText(" " + Model.getRed());
         }
         else if (button.getId().contains("green"))
         {
-            model.changeColorViaRelativeValue(ColorCode.GREEN, button.getText());
-            green.setText(" " + model.getGreen());
+            Model.changeColorViaRelativeValue(ColorCode.GREEN, button.getText());
+            green.setText(" " + Model.getGreen());
         }
         else{
-            model.changeColorViaRelativeValue(ColorCode.BLUE, button.getText());
-            blue.setText(" " + model.getBlue());
+            Model.changeColorViaRelativeValue(ColorCode.BLUE, button.getText());
+            blue.setText(" " + Model.getBlue());
         }
-        String hexCode = model.getHex();
+        String hexCode = Model.getHex();
         hex.setText(hexCode);
         color.setStyle("-fx-background-color: " + hexCode + ";");
     }

@@ -2,7 +2,7 @@ package model;
 
 import java.util.Scanner;
 
-public class model {
+public class Model {
     private static ModularCounter red = new ModularCounter(0, 256);
     private static ModularCounter green = new ModularCounter(0, 256);
     private static ModularCounter blue = new ModularCounter(0, 256);
