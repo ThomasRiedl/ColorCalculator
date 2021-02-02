@@ -19,15 +19,19 @@ import java.util.ResourceBundle;
 public class MainController implements Initializable
 {
     @FXML
-    Button color = new Button();
+    Button color;
     @FXML
-    Label hex = new Label();
+    Label hex;
     @FXML
-    TextField red = new TextField();
+    TextField red;
     @FXML
-    TextField blue = new TextField();
+    TextField blue;
     @FXML
-    TextField green = new TextField();
+    TextField green;
+    @FXML
+    Label HexValue;
+    @FXML
+    Button colorBox;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle)
@@ -93,5 +97,22 @@ public class MainController implements Initializable
         String hexCode = Model.getHex();
         hex.setText(hexCode);
         color.setStyle("-fx-background-color: " + hexCode + ";");
+    }
+
+    public void loadFromFile()
+    {
+        Model.loadFromFile();
+        String hex = Model.getHex();
+        HexValue.setText(hex);
+        colorBox.setStyle("-fx-background-color: " + Model.getHex() + ";");
+
+        red.setText(String.valueOf(Model.getRed()));
+        green.setText(String.valueOf(Model.getGreen()));
+        blue.setText(String.valueOf(Model.getBlue()));
+    }
+
+    public void saveToFile()
+    {
+        Model.saveToFile();
     }
 }

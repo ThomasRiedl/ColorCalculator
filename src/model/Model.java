@@ -1,5 +1,9 @@
 package model;
 
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.FileReader;
+import java.io.FileWriter;
 import java.util.Scanner;
 
 public class Model {
@@ -149,5 +153,48 @@ public class Model {
         s += BV;
 
         return s;
+    }
+
+    public static void loadFromFile()
+    {
+        try
+        {
+            FileReader fr = new FileReader("color.txt");
+            BufferedReader br = new BufferedReader(fr);
+
+            if(br.readLine().equals("Color File Format 1.0"))
+            {
+                changeColorViaAbsoluteValue(ColorCode.RED, Integer.parseInt(br.readLine()));
+                changeColorViaAbsoluteValue(ColorCode.GREEN, Integer.parseInt(br.readLine()));
+                changeColorViaAbsoluteValue(ColorCode.BLUE, Integer.parseInt(br.readLine()));
+            }
+            br.close();
+        }
+        catch (Exception ex)
+        {
+            System.out.printf("Error: %s%n",ex.getMessage());
+        }
+    }
+
+    public static void saveToFile()
+    {
+        try
+        {
+            FileWriter fw = new FileWriter("color.txt");
+            BufferedWriter bw = new BufferedWriter(fw);
+
+            bw.write(System.lineSeparator());
+            bw.write(String.valueOf(getRed()));
+            bw.write(System.lineSeparator());
+            bw.write(String.valueOf(getGreen()));
+            bw.write(System.lineSeparator());
+            bw.write(String.valueOf(getBlue()));
+
+            bw.close();
+        }
+        catch (Exception ex)
+        {
+            System.out.printf("Error: %s%n",ex.getMessage());
+        }
     }
 }

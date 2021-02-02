@@ -20,21 +20,26 @@
         <RowConstraints />
         <RowConstraints />
         <RowConstraints />
+      <RowConstraints />
     </rowConstraints>
     <children>
         <Label text="Red" />
-        <TextField fx:id="red" onKeyReleased="#absoluteInput" promptText="0" GridPane.rowIndex="1" />
-        <Label text="Green" GridPane.rowIndex="2" />
-        <TextField fx:id="green" onKeyReleased="#absoluteInput" promptText="0" GridPane.rowIndex="3" />
-        <Label text="Blue" GridPane.rowIndex="4" />
-        <TextField fx:id="blue" onKeyReleased="#absoluteInput" promptText="0" GridPane.rowIndex="5" />
+        <TextField fx:id="red" onKeyReleased="#absoluteInput" promptText="0" GridPane.rowIndex="2" />
+        <Label text="Green" GridPane.rowIndex="3" />
+        <TextField fx:id="green" onKeyReleased="#absoluteInput" promptText="0" GridPane.rowIndex="4" />
+        <Label text="Blue" GridPane.rowIndex="5" />
+        <TextField fx:id="blue" onKeyReleased="#absoluteInput" promptText="0" GridPane.rowIndex="6" />
         <Button fx:id="increase_red" mnemonicParsing="false" onAction="#relativeInput" prefHeight="17.0" prefWidth="94.0" text="+ 10" GridPane.columnIndex="1" />
-        <Button fx:id="decrease_red" mnemonicParsing="false" onAction="#relativeInput" prefHeight="25.0" prefWidth="94.0" text="- 10" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-        <Button fx:id="increase_green" mnemonicParsing="false" onAction="#relativeInput" prefHeight="28.0" prefWidth="94.0" text="+ 10" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-        <Button fx:id="decrease_green" mnemonicParsing="false" onAction="#relativeInput" prefHeight="22.0" prefWidth="94.0" text="- 10" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-        <Button fx:id="increase_blue" mnemonicParsing="false" onAction="#relativeInput" prefHeight="20.0" prefWidth="94.0" text="+ 10" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-        <Button fx:id="decrease_blue" mnemonicParsing="false" onAction="#relativeInput" prefHeight="23.0" prefWidth="94.0" text="- 10" GridPane.columnIndex="1" GridPane.rowIndex="5" />
-        <Label fx:id="hex" text="Hex: 000000" GridPane.columnIndex="2" GridPane.rowIndex="4" />
-        <Button fx:id="color" mnemonicParsing="false" prefHeight="56.0" prefWidth="68.0" GridPane.columnIndex="2" GridPane.columnSpan="2147483647" GridPane.rowSpan="2147483647" />
+        <Button fx:id="decrease_red" mnemonicParsing="false" onAction="#relativeInput" prefHeight="25.0" prefWidth="94.0" text="- 10" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+        <Button fx:id="increase_green" mnemonicParsing="false" onAction="#relativeInput" prefHeight="28.0" prefWidth="94.0" text="+ 10" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+        <Button fx:id="decrease_green" mnemonicParsing="false" onAction="#relativeInput" prefHeight="22.0" prefWidth="94.0" text="- 10" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+        <Button fx:id="increase_blue" mnemonicParsing="false" onAction="#relativeInput" prefHeight="20.0" prefWidth="94.0" text="+ 10" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+        <Button fx:id="decrease_blue" mnemonicParsing="false" onAction="#relativeInput" prefHeight="23.0" prefWidth="94.0" text="- 10" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+        <Label fx:id="hex" text="Hex: 000000" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+        <Label fx:id="HexValue" layoutX="294.0" layoutY="161.0" prefHeight="24.0" prefWidth="98.0" text=" " GridPane.columnIndex="2" GridPane.rowIndex="2" />
+        <Button fx:id="colorBox" layoutX="264.0" layoutY="1.0" mnemonicParsing="false" prefHeight="53.0" prefWidth="133.0" GridPane.columnIndex="2" />
+        <Button layoutX="463.0" layoutY="-2.0" mnemonicParsing="false" onAction="#loadFromFile" prefHeight="72.0" prefWidth="164.0" text="Load" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+        <Button layoutX="463.0" layoutY="74.0" mnemonicParsing="false" onAction="#saveToFile" prefHeight="72.0" prefWidth="164.0" text="Save" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+        <Button fx:id="color" mnemonicParsing="false" prefHeight="56.0" prefWidth="138.0" GridPane.columnIndex="2" GridPane.columnSpan="2147483647" GridPane.rowIndex="6" GridPane.rowSpan="2147483647" />
     </children>
 </GridPane>
